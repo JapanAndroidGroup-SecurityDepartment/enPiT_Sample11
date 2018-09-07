@@ -24,6 +24,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mlogin_title = findViewById(R.id.txt_login_title2);
+
         mLoginBtn = findViewById(R.id.btn_login);
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +64,8 @@ public class MainActivity extends Activity {
                     mServerIP = data.getStringExtra(Constants.EXTRA_SERVER_IP);
                     if (mAutherUserID > 0) {
                         mLoginBtn.setVisibility(View.GONE);
-                        mlogin_title.setText("Login User Name:" + mAutherUserName);
+                        String text = "Login User Name:" + mAutherUserName;
+                        mlogin_title.setText(text);
                     }
                 }
                 break;
